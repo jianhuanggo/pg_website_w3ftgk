@@ -28,16 +28,13 @@
     <section class="projects">
         <h2>Projects</h2>
         <div class="project-container">
-            {% for project in projects %}
-                <div class="project">
-                    <h3>{{ project.title }}</h3>
-                    <a href="{{ project.url }}" target="_blank" class="project-image">
-                        <img src="{{ url_for('static', filename=project.thumbnail) }}" alt="{{ project.title }}">
-                    </a>
-                    <p>{{ project.description }}</p>
-                    <a href="{{ project.url }}" target="_blank" class="project-link">view on GitHub</a>
-                </div>
-            {% endfor %}
+            <div class="buttons-container">
+                <button class="custom-button" id="button1">{{ button1_name }}</button>
+                <button class="custom-button" id="button2">{{ button2_name }}</button>
+            </div>
+            <div class="text-section">
+                <p>{{ text_content | replace('\n', '<br>') | safe }}</p>
+            </div>
         </div>
     </section>
     <section class="skills">
