@@ -6,7 +6,7 @@ import subprocess
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv("env_profile")
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
@@ -169,3 +169,5 @@ def execute_button2():
             "message": str(e)
         }), 500
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5010, debug=True)
