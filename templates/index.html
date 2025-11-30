@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ profile.name }} Developer Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Shanti&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>{{ profile.name }}</h1>
+        <p id="attn">{{ profile.title }}</p>
+        <ul class="socials">
+            {% for social in socials %}
+                <li>
+                    <a href="{{ social.url }}" target="_blank" title="{{ social.platform|capitalize }}">
+                        <img src="{{ url_for('static', filename=social.icon) }}" alt="{{ social.platform }}">
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>
+            {{ profile.bio }}
+            <br>
+            From {{ profile.location }}.
+        </p>
+    </header>
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            {% for project in projects %}
+                <div class="project">
+                    <h3>{{ project.title }}</h3>
+                    <a href="{{ project.url }}" target="_blank" class="project-image">
+                        <img src="{{ url_for('static', filename=project.thumbnail) }}" alt="{{ project.title }}">
+                    </a>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.url }}" target="_blank" class="project-link">view on GitHub</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill.name }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

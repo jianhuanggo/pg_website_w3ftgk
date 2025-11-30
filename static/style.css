@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #7B22FF, #00DCDE);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(107, 72, 255, 0.3);
+    background-color: #16182B;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-size: 1.7em;
+}
+
+h3 {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+.skills, .projects {
+    margin: 10px 0;
+    background: #16182B;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skills li {
+    background: #3F7DEF;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: transform 0.2s ease;
+    font-size: 1.2em;
+    margin: 0 3px;
+}
+
+.skills li:hover {
+    transform: scale(1.05);
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project {
+    text-align: center;
+    padding: 25px;
+    background: #20253F;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 6px 10px rgba(123, 34, 255, 0.4),
+        0 6px 20px rgba(0, 220, 222, 0.3);
+}
+
+.project img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, #7B22FF, #00DCDE) 3;
+}
+
+.project .project-image {
+    display: block;
+    text-decoration: none;
+}
+
+.project .project-image:hover {
+    filter: drop-shadow(0 8px 16px rgba(63, 125, 239, 0.6));
+}
+
+.project h3 {
+    margin: 0;
+    color: #e0e0e0;
+    font-size: 1.5em;
+}
+
+.project p {
+    color: lightgray;
+    font-family: 'Shanti', sans-serif;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.project .project-link {
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #303960;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.project .project-link:hover {
+    background: #6B48FF;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#attn {
+    font-size: 1.5em;
+    margin: 0;
+    padding-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    line-height: 1.2em;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.socials li {
+    display: inline;
+}
+
+.socials a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.socials a img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+}
+
+.socials a:hover {
+    filter: drop-shadow(0 8px 16px rgba(63, 125, 239, 0.6));
+    transform: scale(1.1);
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project {
+        padding: 20px;
+    }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    #attn {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .project h3 {
+        font-size: 1.3em;
+    }
+
+    .project p {
+        font-size: 1.1em;
+    }
+
+    .project .project-link {
+        font-size: 1.3em;
+        padding: 8px 20px;
+    }
+
+    .skills li {
+        font-size: 1em;
+    }
+
+    .socials a img {
+        width: 30px;
+        height: 30px;
+    }
+}
